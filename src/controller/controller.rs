@@ -2,7 +2,7 @@ use actix_web::{get, web, HttpResponse, Responder};
 use actix_web::web::{Path};
 use serde::{Deserialize, Serialize};
 use sqlx::PgPool;
-use crate::model::task::Task;
+use crate::service::service::get_tasks;
 
 #[derive(Deserialize,Serialize)]
 pub struct TaskIdentifier{
@@ -11,7 +11,7 @@ pub struct TaskIdentifier{
 
 #[get("/task")]
 pub async fn get_all_task(pool: web::Data<PgPool>) -> impl Responder{
-    HttpResponse::Ok().json(tasks)
+    HttpResponse::Ok().json(get_tasks(pool))
 }
 
 #[get("/task/{task_global_id}")]
