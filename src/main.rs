@@ -3,7 +3,7 @@ mod repository;
 mod model;
 
 use std::env;
-use controller::task::{
+use controller::controller::{
     get_task,
     get_all_task
 };
