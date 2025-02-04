@@ -8,7 +8,7 @@ use controller::task::{
     get_all_task
 };
 
-use actix_web::{HttpServer, App, web::Data, middleware::Logger, web};
+use actix_web::{HttpServer, App, middleware::Logger, web};
 use dotenv::dotenv;
 use sqlx::PgPool;
 
