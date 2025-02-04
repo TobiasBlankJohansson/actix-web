@@ -1,4 +1,5 @@
-use actix_web::get;
+use actix_web::{get, HttpResponse, Responder};
+use actix_web::web::{Path};
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize,Serialize)]
@@ -7,6 +8,6 @@ pub struct TaskIdentifier{
 }
 
 #[get("/task/{task_global_id}")]
-pub async fn get_task(TaskIdentifier: Path<TaskIdentifier>, body:Json<Struct>) -> Json<String>{
-    return Json(TaskIdentifier.into_inner().task_global_id);
+pub async fn get_task(task_identifier: Path<TaskIdentifier>) -> impl Responder{
+    HttpResponse::Ok().json(task_identifier.into_inner().task_global_id)
 }

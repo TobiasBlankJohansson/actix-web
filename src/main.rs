@@ -1,7 +1,7 @@
 mod api;
-mod api;
+mod repository;
 
-use api::task{
+use api::task::{
     get_task
 };
 
