@@ -1,7 +1,7 @@
-mod api;
+mod controller;
 mod repository;
 
-use api::task::{
+use controller::task::{
     get_task
 };
 
