@@ -1,6 +1,7 @@
 mod controller;
 mod repository;
 mod model;
+mod service;
 
 use std::env;
 use controller::controller::{
