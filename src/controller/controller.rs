@@ -10,7 +10,7 @@ pub struct TaskIdentifier{
 }
 
 #[get("/task")]
-pub async fn get_all_task() -> impl Responder{
+pub async fn get_all_task(pool: web::Data<PgPool>) -> impl Responder{
     HttpResponse::Ok().json(tasks)
 }
 
