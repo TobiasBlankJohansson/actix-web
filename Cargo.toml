@@ -16,5 +16,5 @@ strum = { version = "^0.24", features = ["derive"] }
 derive_more = "^0.99"
 sqlx = { version = "0.6", features = ["postgres", "runtime-tokio-rustls"] }
 tokio = { version = "1", features = ["full"] }
-actix-rt = "2.5.0" # if you're using Actix Web <4.0.0
+actix-rt = "2.5.0"
 dotenv = "0.15"

@@ -11,3 +11,8 @@ pub struct TaskIdentifier{
 pub async fn get_task(task_identifier: Path<TaskIdentifier>) -> impl Responder{
     HttpResponse::Ok().json(task_identifier.into_inner().task_global_id)
 }
+
+#[get("/task")]
+pub async fn get_all_task() -> impl Responder{
+
+}
