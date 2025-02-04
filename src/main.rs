@@ -1,9 +1,11 @@
 mod controller;
 mod repository;
+mod model;
 
 use std::env;
 use controller::task::{
-    get_task
+    get_task,
+    get_all_task
 };
 
 use actix_web::{HttpServer, App, web::Data, middleware::Logger, web};
@@ -29,6 +31,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(logger)
             .app_data(web::Data::new(pool.clone()))
             .service(get_task)
+            .service(get_all_task)
     })
         .bind(("127.0.0.1",80))?
         .run()
