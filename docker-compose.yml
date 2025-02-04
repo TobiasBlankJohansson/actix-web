@@ -1,7 +1,7 @@
 services:
   postgres:
     image: "postgres:15"
-    container_name: "budget-postgres"
+    container_name: "rust-postgres"
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
